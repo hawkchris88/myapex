@@ -21,6 +21,7 @@ private:
     }
 
 public:
+    
     void markForPointerResolution()
     {
         m_basePointer = 0;
@@ -60,6 +61,14 @@ public:
         int result = mem::ReadInt(ptrLong);
         return result > 0;
     }
+   
+    bool isMovingForward(){
+         long basePointer = getBasePointer();
+        long ptrLong = offsets::REGION + offsets::OFFSET_IN_FORWARD;
+        int result = mem::ReadInt(ptrLong);
+        return result > 0;
+    }
+    
     std::string getName()
     {
         long basePointer = getBasePointer();

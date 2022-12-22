@@ -14,6 +14,10 @@
 #include "Aimbot.cpp"
 #include "X11Utils.cpp"
 #include "ConfigLoader.cpp"
+#include "Movement.cpp"
+//know offsets dey
+//know how to read and write to memory
+//
 
 int main(int argc, char *argv[])
 {
@@ -39,6 +43,7 @@ int main(int argc, char *argv[])
     Sense *sense = new Sense(configLoader, level, localPlayer, players, x11Utils);
     NoRecoil *noRecoil = new NoRecoil(configLoader, level, localPlayer, players, x11Utils);
     Aimbot *aimbot = new Aimbot(configLoader, level, localPlayer, players, x11Utils);
+    Movement *movement = new Movement();
 
     // Main loop
     printf("MYAPEX STARTING MAIN LOOP\n");
@@ -68,6 +73,7 @@ int main(int argc, char *argv[])
             if (configLoader->isSenseOn())
                 sense->update();
 
+            movement->update();
             // all ran fine
             if (counter % 1000 == 0)
                 printf("UPDATE[%d] OK. \n", counter);

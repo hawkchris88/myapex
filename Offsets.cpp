@@ -1,20 +1,24 @@
-//season 15 offset update
-// 15/11/22
+
 #pragma once
 namespace offsets
 {
+    //m_fFlags=0x0098
+    //in_forward=0x07642ca8
+    //
     // buttons
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const long IN_ATTACK = 0x07640a70; // [Buttons] -> in_attack
+    const long IN_ATTACK = 0x07642bd0; // [Buttons] -> in_attack
+    const long OFFSET_FLAGS	= 0x0098;
+    const long OFFSET_IN_FORWARD= 0x07642ca8;
     // core
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const long REGION = 0x140000000;     // [Mine]          -> Region
-    const long LEVEL = 0x1432a28;        // [Miscellaneous] -> LevelName
-    const long LOCAL_PLAYER = 0x1ebf488; // [Miscellaneous] -> LocalPlayer
-    const long ENTITY_LIST = 0x1b0e678;  // [Miscellaneous] -> cl_entitylist
+     const long REGION = 0x140000000;     // [Mine]          -> Region
+    const long LEVEL = 0x1432ac8;        // [Miscellaneous] -> LevelName
+    const long LOCAL_PLAYER = 0x1ebf528; // [Miscellaneous] -> LocalPlayer
+    const long ENTITY_LIST = 0x1b0e718;  // [Miscellaneous] -> cl_entitylist
     // entity
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const long LOCAL_ORIGIN = 0x0158; // [DataMap.CBaseViewModel]    -> m_localOrigin
+     const long LOCAL_ORIGIN = 0x0158; // [DataMap.CBaseViewModel]    -> m_localOrigin
     // player
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const long GLOW_ENABLE = (0x03c0 + 0x8);        // [RecvTable.DT_HighlightSettings] -> m_highlightServerContextID + 0x8
